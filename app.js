@@ -1,6 +1,8 @@
 (function (){
     angular.module("LunchCheck",[])
-    .controller("LunchCheckController",function($scope) {
+    .controller("LunchCheckController", LunchCheckController);
+    LunchCheckController.$inject = ['$scope'];
+    function LunchCheckController($scope) {
         $scope.name = "";
         $scope.innervalue = null;
         $scope.change = function() {
@@ -14,5 +16,5 @@
             else if (p >= 1 && p <= 3) return "Enjoy!";
             else if (p > 3) return "Too much!";
         };
-    });
+    }
 })();
